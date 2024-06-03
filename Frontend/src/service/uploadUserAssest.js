@@ -2,7 +2,6 @@ export const uploadUserAssest = async (image) => {
   if (!image.type.startsWith("image/")) return;
   let formData = new FormData();
   formData.append("file", image);
-  return
   formData.append("cloud_name", process.env.REACT_APP_CLOUD_NAME);
   formData.append("upload_preset", process.env.REACT_APP_UPLOAD_PRESENT);
   const response = await fetch(

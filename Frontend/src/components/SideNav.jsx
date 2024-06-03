@@ -24,7 +24,7 @@ function SideNav() {
   useFetchedUserInfo();
   const handeChange = async (e) => {
     try {
-      const { url } = await uploadUserAssest(e.traget.files[0]);
+      const { url } = await uploadUserAssest(e.target.files[0]);
       dispatch(UpdateUserInfo(url));
       await updateUserProfile(url);
     } catch (error) {
