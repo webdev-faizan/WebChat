@@ -1,3 +1,5 @@
+import Jwt from "jsonwebtoken";
+import userModels from "../../models/userModels.js";
 const emailVerification = async (req, res) => {
   try {
     const { token } = req.body;
