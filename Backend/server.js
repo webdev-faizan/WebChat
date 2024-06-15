@@ -260,6 +260,8 @@ io.on("connection", async (socket) => {
       chat.lastMessage = "🖼️  🖼️";
     } else if (subType === "Document") {
       chat.lastMessage = "📋  📋";
+    } else if (subType === "Link") {
+      chat.lastMessage = link;
     }
     chat.message.push(new_message);
     await chat.save();

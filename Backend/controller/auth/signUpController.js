@@ -17,14 +17,12 @@ const signUpController = async (req, resp) => {
         expiresIn: "10m",
       });
       const link = `${process.env.BASE_URL}/verify-email?token=${token}`;
-      if (process.env.NODE_ENV === "production") {
-        const html = VerifedEmailMail(this_user.fullname, link);
-        await sendNodemailerMail({
-          to: email,
-          subject: "Email Verified",
-          html,
-        });
-      }
+      const html = VerifedEmailMail(this_user.fullname, link);
+      await sendNodemailerMail({
+        to: email,
+        subject: "Email Verified",
+        html,
+      });
       await this_user.save();
       return resp.status(201).json({
         message: "Sigup successfully Plase verfiy your email ",
@@ -42,4 +40,3 @@ const signUpController = async (req, resp) => {
 };
 
 export default signUpController;
-

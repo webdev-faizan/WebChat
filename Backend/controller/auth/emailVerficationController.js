@@ -29,6 +29,7 @@ const emailVerification = async (req, res) => {
       .status(200)
       .json({ message: "Email verification completed successfully" });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ message: "Internal server error" });
   }
 };

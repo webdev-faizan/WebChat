@@ -174,6 +174,9 @@ export function newPassword(FormData, token) {
         toast.success(data?.message, {
           autoClose: 1000,
         });
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 1000);
       })
       .catch((error) => {
         toast.error(error && error?.response?.data?.message, {

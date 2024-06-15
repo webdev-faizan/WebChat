@@ -121,7 +121,6 @@ const Conversion = () => {
             type: "Text",
             message: inputValue,
           });
-          setInputValue("");
         }
       }
     } catch (error) {
@@ -129,6 +128,7 @@ const Conversion = () => {
         autoClose: 1200,
       });
     } finally {
+      setInputValue("");
       setIsloading(false);
     }
   };

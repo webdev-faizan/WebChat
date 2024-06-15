@@ -51,7 +51,6 @@ const Videocall = forwardRef((props, ref) => {
       }
     });
     socket?.on("Video_call_end", ({ message }) => {
-      alert(message);
       dispatch(ShowVideo(false));
       dispatch(incomingCall(false));
       dispatch(CallNotifcation({ ShowCallNotifcation: true, message }));
